@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: linkding-test
+  name: linkding-test
+  namespace: linkding-ns
+spec:
+  ports:
+  - port: 9000
+    protocol: TCP
+    targetPort: 9000
+  selector:
+    run: linkding-test
+  type: LoadBalancer

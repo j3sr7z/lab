@@ -9,3 +9,5 @@ spec:
   containers:
   - image: sissbruecker/linkding:1.38.0
     name: linkding-test
+    ports:
+    - containerPort: 9000
