@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: linkding-test
+  name: linkding-test
+  namespace: linkding-ns
+spec:
+  containers:
+  - image: sissbruecker/linkding:1.38.0
+    name: linkding-test
