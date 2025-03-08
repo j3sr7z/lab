@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: deploy
+  name: wallabag
+spec:
+  containers:
+  - args:
+    - wallabag
+    - replicas=1
+    image: wallabag/wallabag
+    name: wallabag
+    ports:
+      - containerPort: 8000
