@@ -1,13 +1,21 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   labels:
-    run: linkding-test
-  name: linkding-test
-  namespace: linkding-ns
+    app: linkding-deploy
+  name: linkding-deploy
 spec:
-  containers:
-  - image: sissbruecker/linkding:1.38.0
-    name: linkding-test
-    ports:
-    - containerPort: 9000
+  replicas: 2
+  selector:
+    matchLabels:
+      app: linkding-deploy
+  template:
+    metadata:
+      labels:
+        app: linkding-deploy
+    spec:
+      containers:
+      - image: sissbruecker/linkding:1.38.0
+        name: linkding
+        ports:
+        - containerPort: 9090

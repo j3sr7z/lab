@@ -2,14 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    run: linkding-test
-  name: linkding-test
-  namespace: linkding-ns
+    app: linkding-deploy
+  name: linkding-svc
 spec:
   ports:
-  - port: 9000
+  - port: 9090
     protocol: TCP
-    targetPort: 9000
+    targetPort: 9090
   selector:
-    run: linkding-test
+    app: linkding-deploy
   type: LoadBalancer
