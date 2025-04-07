@@ -46,3 +46,6 @@ else:
 # A and B
 # A or B
 # not A
+
+print(input("STRING IN MAYUS CONVERT TO lower").lower())
+
